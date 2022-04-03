@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+    crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/script.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <body onload="openPage('Daily', this, 'green')">
+    <button class="tablink" onclick="openPage('Daily', this, 'green')">
+      Daily Tasks
+    </button>
+    <button
+      class="tablink"
+      onclick="openPage('Weekly', this, 'green')"
+      id="defaultOpen"
+    >
+      Weekly Tasks
+    </button>
+    <button class="tablink" onclick="openPage('Monthly', this, 'green')">
+      Monthly Important Dates
+    </button>
+    <button class="tablink" onclick="openPage('Future', this, 'green')">
+      Future Goals/Planning
+    </button>
+
+    <div id="Daily" class="tabcontent">
+      <h3>Daily Tasks for the day</h3>
+      <p>Good Morning!</p>
+      <p>Set your daily tasks for the day!</p>
+      <p id="demo"></p>
+      <script>
+        const month = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        var d = new Date();
+        let name = month[d.getMonth()];
+        var date = d.getDate();
+        //var month = d.getMonth() + 1; // Since getMonth() returns month from 0-11 not 1-12
+        var year = d.getFullYear();
+
+        var dateStr = name + " " + date + ", " + year;
+        document.write(dateStr);
+      </script>
+      <div id="DailyInput"></div>
+      <div class="icon-bar">
+        <a id="CircleButton" class="active" href="#"
+          ><i class="fa fa-circle"></i
+        ></a>
+        <a id="PencilButton" href="#"><i class="fa fa-pencil"></i></a>
+        <a href="#"><i class="fa fa-bars"></i></a>
+        <a href="#"><i class="fa fa-star"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+      </div>
+    </div>
+
+    <div id="Weekly" class="tabcontent">
+      <h3>Weekly Tasks</h3>
+      <p>Set your weekly tasks for this week.</p>
+      <div id="WeeklyInput"></div>
+      <div class="icon-bar">
+        <a id = "CircleButton2" class="active" href="#"><i class="fa fa-circle"></i></a>
+        <a href="#"><i class="fa fa-pencil"></i></a>
+        <a href="#"><i class="fa fa-bars"></i></a>
+        <a href="#"><i class="fa fa-star"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Sunday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Monday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Tuesday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Wednesday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Thursday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Friday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Saturday</span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea"></textarea>
+      </div>
+    </div>
+
+    <div id="Monthly" class="tabcontent">
+      <h3>Monthly Important Dates</h3>
+      <p>Put in any important dates for this month!</p>
+      <!--Calendar-->
+      <div class="month">
+        <ul>
+          <li class="prev">&#10094;</li>
+          <li class="next">&#10095;</li>
+          <li>August<br /><span style="font-size: 18px">2021</span></li>
+        </ul>
+      </div>
+
+      <ul class="weekdays">
+        <li>Mo</li>
+        <li>Tu</li>
+        <li>We</li>
+        <li>Th</li>
+        <li>Fr</li>
+        <li>Sa</li>
+        <li>Su</li>
+      </ul>
+
+      <ul class="days">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li><span class="active">10</span></li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+      </ul>
+      <!--End of Calendar-->
+      <div id="MonthlyInput"></div>
+      <div class="icon-bar">
+        <a class="active" href="#"><i class="fa fa-circle"></i></a>
+        <a href="#"><i class="fa fa-pencil"></i></a>
+        <a href="#"><i class="fa fa-bars"></i></a>
+        <a href="#"><i class="fa fa-star"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+      </div>
+    </div>
+
+    <div id="Future" class="tabcontent">
+      <h3>Future Goals and Planning</h3>
+      <p>
+        Write down any goals that you have for the future and any future events!
+      </p>
+      <div id="YearlyInput"></div>
+      <div class="icon-bar">
+        <a class="active" href="#"><i class="fa fa-circle"></i></a>
+        <a href="#"><i class="fa fa-pencil"></i></a>
+        <a href="#"><i class="fa fa-bars"></i></a>
+        <a href="#"><i class="fa fa-star"></i></a>
+        <a href="#"><i class="fa fa-trash"></i></a>
+      </div>
+    </div>
+
+    <script src="./home-page.js"></script>
+  </body>
+
+  <!-- Add icon library -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+</html>
